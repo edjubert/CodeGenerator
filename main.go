@@ -1,11 +1,12 @@
 package main
 
 import (
-	eParse "edjubert/CodeGenerator/parse"
-	"fmt"
+	"edjubert/CodeGenerator/functions"
+	"edjubert/CodeGenerator/parse"
 )
 
 func main() {
-	n, name, prefix, ext := eParse.Flags()
-	fmt.Println(n, name, prefix, ext)
+	n, name, prefix, ext := parse.Flags()
+
+	functions.WriteCSV(*name, *n, *prefix, *ext)
 }
